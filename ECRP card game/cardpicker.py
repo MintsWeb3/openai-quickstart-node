@@ -54,7 +54,7 @@ def main():
     screen = pygame.display.set_mode((WIDTH, HEIGHT))
 
     pygame.mixer.init()  # Initialize the mixer
-    pygame.mixer.music.load("match_sound.mp3")  # Use your music file here
+    pygame.mixer.music.load("guilty.mp3")  # Use your music file here
 
     deck = create_deck(items)
     current_card = deck.pop()
