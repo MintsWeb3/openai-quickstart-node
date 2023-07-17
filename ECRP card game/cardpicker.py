@@ -7,7 +7,7 @@ import threading
 pygame.init()
 
 # Set up some constants
-WIDTH, HEIGHT = 1200, 800  # Modify the height to better fit your screen
+WIDTH, HEIGHT = 800, 900  # Modified the height to better fit your screen
 WHITE = (255, 255, 255)
 GREEN = (0, 255, 0)  # Color to show when a match is made
 CARD_WIDTH, CARD_HEIGHT = 150, 200  # Adjust these values according to your card images
@@ -65,7 +65,7 @@ def main():
     for i in range(4):
         for j in range(5):
             card = deck.pop()
-            card.rect.topleft = (j * (CARD_WIDTH + GAP), i * (CARD_HEIGHT + GAP) + 2*CARD_HEIGHT + 3 * GAP)  # Change position of face-down cards
+            card.rect.topleft = (j * (CARD_WIDTH + GAP), i * (CARD_HEIGHT + GAP) + CARD_HEIGHT + 3 * GAP)  # Change position of face-down cards
             card_grid[i][j] = card
 
     clicked_card = None
@@ -91,7 +91,7 @@ def main():
                                 current_card = deck.pop()
                                 current_card.face_up = True
                                 card_grid[i][j] = deck.pop()
-                                card_grid[i][j].rect.topleft = (j * (CARD_WIDTH + GAP), i * (CARD_HEIGHT + GAP) + 2*CARD_HEIGHT + 3 * GAP)
+                                card_grid[i][j].rect.topleft = (j * (CARD_WIDTH + GAP), i * (CARD_HEIGHT + GAP) + CARD_HEIGHT + 3 * GAP)
                                 clicked_card = None
                                 match_made = True
                                 pygame.mixer.music.play()  # Play music
